@@ -13,7 +13,7 @@ import org.testng.annotations.DataProvider;
                 "pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 //                "tech.grasshopper.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                "json:target/cucumber-json/cucumber.json"
+                "json:target/cucumber-reports/cucumber.json"
                 },
         //Auto generated report from cucumber - Since Extent reports are used default cucumber reports are commented
         monochrome = true,
@@ -26,7 +26,7 @@ public class TestRunner extends AbstractTestNGCucumberTests {
         System.setProperty("dataproviderthreadcount", "2");
     }
 
-    @DataProvider(parallel=true)
+    @DataProvider(parallel=false)
     @Override
     public Object[][] scenarios(){
         Object[][] scenarios = super.scenarios();
