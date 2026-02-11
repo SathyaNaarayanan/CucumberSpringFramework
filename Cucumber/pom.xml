@@ -113,35 +113,35 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.2.5</version>
-				<configuration>
-					<systemPropertyVariables>
-						<extentreport.cucumberJsonReportDirectory>
-							target/cucumber-reports
-						</extentreport.cucumberJsonReportDirectory>
-						<extentreport.outputfolder>
-							target/extent-report
-						</extentreport.outputfolder>
-					</systemPropertyVariables>
-				</configuration>
+<!--				<configuration>-->
+<!--					<systemPropertyVariables>-->
+<!--						<extentreport.cucumberJsonReportDirectory>-->
+<!--							target/cucumber-reports-->
+<!--						</extentreport.cucumberJsonReportDirectory>-->
+<!--						<extentreport.outputfolder>-->
+<!--							target/extent-report-->
+<!--						</extentreport.outputfolder>-->
+<!--					</systemPropertyVariables>-->
+<!--				</configuration>-->
 			</plugin>
-			<plugin>
-			<groupId>tech.grasshopper</groupId>
-			<artifactId>extentreports-cucumberjson-plugin</artifactId>
-			<version>2.16.0</version>
-			<executions>
-				<execution>
-					<id>generate-extentreport</id>
-					<phase>verify</phase>
-					<goals>
-						<goal>extentreport</goal>
-					</goals>
-					<configuration>
-						<cucumberJsonReportDirectory>${project.build.directory}/cucumber-json</cucumberJsonReportDirectory>
-						<extentPropertiesDirectory>${project.basedir}/src/test/resources</extentPropertiesDirectory>
-					</configuration>
-				</execution>
-			</executions>
-		</plugin>
+<!--			<plugin>-->
+<!--			<groupId>tech.grasshopper</groupId>-->
+<!--			<artifactId>extentreports-cucumberjson-plugin</artifactId>-->
+<!--			<version>2.16.0</version>-->
+<!--			<executions>-->
+<!--				<execution>-->
+<!--					<id>generate-extentreport</id>-->
+<!--					<phase>verify</phase>-->
+<!--					<goals>-->
+<!--						<goal>extentreport</goal>-->
+<!--					</goals>-->
+<!--					<configuration>-->
+<!--						<cucumberJsonReportDirectory>${project.build.directory}/cucumber-reports</cucumberJsonReportDirectory>-->
+<!--						<extentPropertiesDirectory>${project.basedir}/src/test/resources</extentPropertiesDirectory>-->
+<!--					</configuration>-->
+<!--				</execution>-->
+<!--			</executions>-->
+<!--		</plugin>-->
 		</plugins>
 
 	</build>
