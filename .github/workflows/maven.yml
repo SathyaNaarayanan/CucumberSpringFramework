@@ -37,6 +37,7 @@ jobs:
         path: "Cucumber/target/cucumber-reports/cucumber.json"
         annotation-status-on-error: 'failure'
     - name: Upload Cucumber Reports
+      if: always()
       uses: actions/upload-artifact@v4
       with:
         name: cucumber-reports
