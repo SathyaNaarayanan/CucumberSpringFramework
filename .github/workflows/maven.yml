@@ -34,7 +34,7 @@ jobs:
       uses: deblockt/cucumber-report-annotations-action@v1.7
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}
-        path: "target/cucumber-reports/cucumber.json"
+        path: "Cucumber/target/cucumber-reports/cucumber.json"
         annotation-status-on-error: 'failure'
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
