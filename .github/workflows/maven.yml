@@ -30,22 +30,26 @@ jobs:
     - name: Build with Maven
       working-directory: Cucumber
       run: mvn clean verify --file pom.xml
+      
+    - name: Check feature files in target
+      run: ls -R Cucumber/target/test-classes/features
+      
     - name: Show target folder contents
       run: ls -R Cucumber/target
+      
     - name: Publish Cucumber Report Annotations
       uses: deblockt/cucumber-report-annotations-action@v1.7
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}
         path: "Cucumber/target/cucumber-reports/cucumber.json"
         annotation-status-on-error: 'failure'
-    - name: Debug Cucumber report
-      run: ls -R Cucumber/target/cucumber-reports
+        
     - name: Upload Cucumber Reports
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: cucumber-reports
-        path: Cucumber/target/
+        path: Cucumber/target/cucumber-reports/
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     # - name: Update dependency graph
