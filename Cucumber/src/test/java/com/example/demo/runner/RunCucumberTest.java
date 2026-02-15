@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-        features = "src/test/resources/features",
+        features = "classpath:features",
         glue = {"com.example.demo.steps","com.example.demo.config"},
         tags = "@BasicCheck or @TestFail",
         plugin = {
