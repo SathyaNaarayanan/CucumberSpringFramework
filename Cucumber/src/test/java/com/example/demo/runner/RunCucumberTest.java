@@ -24,6 +24,7 @@ public class RunCucumberTest extends AbstractTestNGCucumberTests {
 
     static {
         System.setProperty("dataproviderthreadcount", "3");
+        System.out.println("RunCucumberTest executing!");
     }
 
     @DataProvider(parallel=true)
