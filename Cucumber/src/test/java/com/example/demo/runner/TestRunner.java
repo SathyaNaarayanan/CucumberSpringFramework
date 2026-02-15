@@ -6,13 +6,12 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-        features = "classpath:features",
+        features = "features",
         glue = {"com.example.demo.steps","com.example.demo.config"},
         tags = "@BasicCheck or @TestFail",
         plugin = {
                 "pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-//                "tech.grasshopper.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/cucumber-reports/cucumber.json"
                 },
         //Auto generated report from cucumber - Since Extent reports are used default cucumber reports are commented
@@ -23,10 +22,10 @@ import org.testng.annotations.DataProvider;
 public class TestRunner extends AbstractTestNGCucumberTests {
 
     static {
-        System.setProperty("dataproviderthreadcount", "2");
+        System.setProperty("dataproviderthreadcount", "3");
     }
 
-    @DataProvider(parallel=false)
+    @DataProvider(parallel=true)
     @Override
     public Object[][] scenarios(){
         Object[][] scenarios = super.scenarios();
