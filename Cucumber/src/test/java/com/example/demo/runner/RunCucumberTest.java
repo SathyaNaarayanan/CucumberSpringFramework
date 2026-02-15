@@ -4,6 +4,7 @@ package com.example.demo.runner;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 @CucumberOptions(
         features = "classpath:features",
@@ -19,6 +20,7 @@ import org.testng.annotations.DataProvider;
         dryRun = false
 )
 
+@Test
 public class RunCucumberTest extends AbstractTestNGCucumberTests {
 
     static {
