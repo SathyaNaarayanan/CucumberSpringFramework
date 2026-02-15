@@ -34,7 +34,7 @@ jobs:
       uses: deblockt/cucumber-report-annotations-action@v1.7
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}
-        path: "Cucumber/target/cucumber.json"
+        path: "Cucumber/target/cucumber-reports/cucumber.json"
         annotation-status-on-error: 'failure'
     - name: Upload Cucumber Reports
       if: always()
