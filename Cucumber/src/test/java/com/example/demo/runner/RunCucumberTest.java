@@ -20,7 +20,6 @@ import org.testng.annotations.Test;
         dryRun = false
 )
 
-@Test
 public class RunCucumberTest extends AbstractTestNGCucumberTests {
 
     static {
