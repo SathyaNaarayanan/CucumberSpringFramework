@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 @CucumberOptions(
         features = "classpath:features",
         glue = {"com.example.demo.steps","com.example.demo.config"},
-        tags = "@BasicCheck or @TestFail",
+//      tags = "@BasicCheck or @TestFail",
         plugin = {
                 "pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
