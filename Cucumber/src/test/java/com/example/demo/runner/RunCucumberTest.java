@@ -19,7 +19,7 @@ import org.testng.annotations.DataProvider;
         dryRun = false
 )
 
-public class TestRunner extends AbstractTestNGCucumberTests {
+public class RunCucumberTest extends AbstractTestNGCucumberTests {
 
     static {
         System.setProperty("dataproviderthreadcount", "3");
