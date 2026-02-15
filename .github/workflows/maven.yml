@@ -28,7 +28,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      working-directory: Cucumber
       run: mvn clean verify --file pom.xml
     - name: Publish Cucumber Report Annotations
       uses: deblockt/cucumber-report-annotations-action@v1.7
