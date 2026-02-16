@@ -37,12 +37,12 @@ jobs:
     - name: Show target folder contents
       run: ls -R Cucumber/target
       
-    - name: Publish Cucumber Report Annotations
-      uses: deblockt/cucumber-report-annotations-action@v1.7
-      with:
-        access-token: ${{ secrets.GITHUB_TOKEN }}
-        path: "Cucumber/target/cucumber-reports/cucumber.json"
-        annotation-status-on-error: 'failure'
+    # - name: Publish Cucumber Report Annotations
+    #   uses: deblockt/cucumber-report-annotations-action@v1.7
+    #   with:
+    #     access-token: ${{ secrets.GITHUB_TOKEN }}
+    #     path: "Cucumber/target/cucumber-reports/cucumber.json"
+    #     annotation-status-on-error: 'failure'
         
     - name: Upload Cucumber Reports
       if: always()
