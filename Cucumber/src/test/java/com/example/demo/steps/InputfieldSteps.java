@@ -55,7 +55,15 @@ public class InputfieldSteps {
 
     @And("Test Fail case")
     public void TestFailCase() {
+        System.out.println("===== CHECKING extent.properties =====");
 
+        System.out.println(
+                Thread.currentThread()
+                        .getContextClassLoader()
+                        .getResource("extent.properties")
+        );
+
+        System.out.println("======================================");
 //        Assert.fail("Force Fail the case");
     }
 

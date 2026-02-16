@@ -33,8 +33,6 @@ public class RunCucumberTest extends AbstractTestNGCucumberTests {
         Object[][] scenarios = super.scenarios();
         System.out.println("Scenarios detected: " + scenarios.length);
         return scenarios;
-
-//        return super.scenarios();
     }
 
 }
