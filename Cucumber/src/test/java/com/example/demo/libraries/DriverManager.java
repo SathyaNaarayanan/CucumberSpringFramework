@@ -2,6 +2,7 @@ package com.example.demo.libraries;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -51,6 +52,14 @@ public class DriverManager {
     // Initialize new driver instance for current thread
 //    Each thread gets its own real driver, no Spring proxy
     public WebDriver initDriver() {
+        ChromeOptions options = new ChromeOptions();
+
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1920,1080");
+
         WebDriver driver = new ChromeDriver(); // Can customize options here
         setDriver(driver);
         return driver;

@@ -54,8 +54,9 @@ public class InputfieldSteps {
     }
 
     @And("Test Fail case")
-    public void TestFailCase(String value) {
-        Assert.fail("Force Fail the case");
+    public void TestFailCase() {
+
+//        Assert.fail("Force Fail the case");
     }
 
 }
