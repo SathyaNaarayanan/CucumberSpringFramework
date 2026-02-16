@@ -6,9 +6,12 @@ import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.cucumber.spring.ScenarioScope;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 
 
 /*@Component - not works
@@ -29,8 +32,13 @@ If Hooks is not annotated, Cucumber still creates one instance per scenario
 
 public class Hooks {
 
-    @Value("${app.url}")
-    private String url;
+
+//    @Value("${app.url}")
+    /*
+    for testing purpose hardcoded url
+     */
+    private String url = "https://testautomationpractice.blogspot.com/2018/09/automation-form.html";
+
 
     private final DriverManager driver;
 
@@ -60,8 +68,6 @@ public class Hooks {
             System.err.println("Failed to capture screenshot: " + e.getMessage());
         }
     }
-
-
 
     @After
     public void quitDriver(Scenario scenario){
