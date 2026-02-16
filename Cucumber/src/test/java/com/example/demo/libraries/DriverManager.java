@@ -60,7 +60,7 @@ public class DriverManager {
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920,1080");
 
-        WebDriver driver = new ChromeDriver(); // Can customize options here
+        WebDriver driver = new ChromeDriver(options); // Can customize options here
         setDriver(driver);
         return driver;
     }
