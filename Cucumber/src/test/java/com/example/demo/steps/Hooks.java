@@ -32,21 +32,16 @@ If Hooks is not annotated, Cucumber still creates one instance per scenario
 
 public class Hooks {
 
-
-//    @Value("${app.url}")
-    /*
-    for testing purpose hardcoded url
-     */
-    private String url = "https://testautomationpractice.blogspot.com/2018/09/automation-form.html";
-
+    private String url;
 
     private final DriverManager driver;
 
     protected PageInitializer pageInitializer;
 
-    public Hooks(DriverManager driver, PageInitializer pageInitializer) {
+    public Hooks(DriverManager driver, PageInitializer pageInitializer, AppConfig appConfig) {
         this.driver = driver;
         this.pageInitializer = pageInitializer;
+        this.url = appConfig.getAppURL();
     }
 
     @Before

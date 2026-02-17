@@ -1,9 +1,12 @@
 package com.example.demo.libraries;
 
+import com.example.demo.steps.AppConfig;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 
@@ -27,6 +30,9 @@ Prevents misuse (set() from outside)
 @Component
 public class DriverManager {
 
+    @Autowired
+    AppConfig appConfig;
+
     private static final ThreadLocal<WebDriver> driverThread = new ThreadLocal<>();
     // Get driver for current thread
     public WebDriver getDriver(){
@@ -46,23 +52,26 @@ public class DriverManager {
             driverThread.remove();
         }
     }
-    @Value("${browser:chrome}")
-    private String browser;
-
     // Initialize new driver instance for current thread
-//    Each thread gets its own real driver, no Spring proxy
+    // Each thread gets its own real driver, no Spring proxy
     public WebDriver initDriver() {
-        ChromeOptions options = new ChromeOptions();
+        WebDriver driver = null;
+        if(appConfig.getBrowser().equalsIgnoreCase("chrome")){
+            driver = new ChromeDriver(chromeOpt());
+            setDriver(driver);
+        }
+        return driver;
+    }
 
+    //uncomment this when test run on Github CI
+    private ChromeOptions chromeOpt(){
+        ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920,1080");
-
-        WebDriver driver = new ChromeDriver(options); // Can customize options here
-        setDriver(driver);
-        return driver;
+        return options;
     }
 
 }
