@@ -13,6 +13,8 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+#workflow dispatch is to run manually 
+  workflow_dispatch:
 
 jobs:
   build:
